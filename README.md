@@ -1,304 +1,169 @@
-<div align="center">
-  <img src="https://github.com/InternLM/lmdeploy/assets/36994684/0cf8d00f-e86b-40ba-9b54-dc8f1bc6c8d8" width="600"/>
-  <br /><br />
+# Django 电商管理系统
 
-[![GitHub Repo stars](https://img.shields.io/github/stars/InternLM/xtuner?style=social)](https://github.com/InternLM/xtuner/stargazers)
-[![license](https://img.shields.io/github/license/InternLM/xtuner.svg)](https://github.com/InternLM/xtuner/blob/main/LICENSE)
-[![PyPI](https://img.shields.io/pypi/v/xtuner)](https://pypi.org/project/xtuner/)
-[![Downloads](https://static.pepy.tech/badge/xtuner)](https://pypi.org/project/xtuner/)
-[![issue resolution](https://img.shields.io/github/issues-closed-raw/InternLM/xtuner)](https://github.com/InternLM/xtuner/issues)
-[![open issues](https://img.shields.io/github/issues-raw/InternLM/xtuner)](https://github.com/InternLM/xtuner/issues)
+这是一个基于 Django 和 PostgreSQL 开发的电商管理系统，包含完整的产品管理、订单管理、用户管理等功能。
 
-👋 join us on [![Static Badge](https://img.shields.io/badge/-grey?style=social&logo=wechat&label=WeChat)](https://cdn.vansin.top/internlm/xtuner.jpg)
-[![Static Badge](https://img.shields.io/badge/-grey?style=social&logo=twitter&label=Twitter)](https://twitter.com/intern_lm)
-[![Static Badge](https://img.shields.io/badge/-grey?style=social&logo=discord&label=Discord)](https://discord.gg/xa29JuW87d)
+## 功能特性
 
-🔍 Explore our models on
-[![Static Badge](https://img.shields.io/badge/-gery?style=social&label=🤗%20Huggingface)](https://huggingface.co/xtuner)
-[![Static Badge](https://img.shields.io/badge/-gery?style=social&label=🤖%20ModelScope)](https://www.modelscope.cn/organization/xtuner)
-[![Static Badge](https://img.shields.io/badge/-gery?style=social&label=🧰%20OpenXLab)](https://openxlab.org.cn/usercenter/xtuner)
-[![Static Badge](https://img.shields.io/badge/-gery?style=social&label=🧠%20WiseModel)](https://www.wisemodel.cn/organization/xtuner)
+### 核心功能
+- 🏠 **首页展示**: 轮播图、推荐产品、分类展示
+- 📱 **响应式设计**: 支持PC、平板、手机等多种设备
+- 🔍 **搜索功能**: 全站搜索，支持产品名称、描述等
+- 📧 **通知系统**: 用户通知管理
+- 📞 **联系我们**: 联系表单，消息管理
 
-English | [简体中文](README_zh-CN.md)
+### 用户管理
+- 👤 **用户认证**: 登录、登出、用户资料管理
+- 🔐 **权限控制**: 基于Django内置权限系统
+- 📊 **用户仪表板**: 订单统计、个人信息管理
+- 🔔 **消息通知**: 系统通知、订单状态更新
 
-</div>
+### 产品管理
+- 📦 **产品管理**: 产品CRUD、图片管理、属性管理
+- 🏷️ **分类管理**: 多级分类、分类图片
+- 🏢 **品牌管理**: 品牌信息、LOGO管理
+- 🔍 **产品筛选**: 按分类、品牌、价格筛选
+- 📸 **图片管理**: 多图片上传、主图设置
 
-## 🚀 Speed Benchmark
+### 订单管理
+- 🛒 **购物车**: 添加、修改、删除商品
+- 💝 **收藏夹**: 产品收藏功能
+- 📋 **订单管理**: 订单创建、状态跟踪
+- 💰 **支付管理**: 支付方式、支付状态
+- 🚚 **物流跟踪**: 发货、配送状态跟踪
 
-- Llama2 7B Training Speed
+### 系统管理
+- ⚙️ **网站设置**: 基本信息、SEO设置、联系方式
+- 🎠 **轮播图管理**: 首页轮播图管理
+- ❓ **FAQ管理**: 常见问题管理
+- 📊 **活动日志**: 用户操作记录
+- 📧 **邮件模板**: 系统邮件模板管理
 
-<div align=center>
-  <img src="https://github.com/InternLM/xtuner/assets/41630003/9c9dfdf4-1efb-4daf-84bf-7c379ae40b8b" style="width:80%">
-</div>
+## 技术栈
 
-- Llama2 70B Training Speed
+- **后端**: Django 5.2.5
+- **数据库**: PostgreSQL
+- **前端**: Bootstrap 5.3.0, Font Awesome 6.0.0
+- **图片处理**: Pillow
+- **部署**: Gunicorn, Whitenoise
 
-<div align=center>
-  <img src="https://github.com/InternLM/xtuner/assets/41630003/5ba973b8-8885-4b72-b51b-c69fa1583bdd" style="width:80%">
-</div>
+## 项目结构
 
-## 🎉 News
-- **\[2025/02\]** Support [OREAL](https://github.com/InternLM/OREAL), a new RL method for math reasoning!
-- **\[2025/01\]** Support [InternLM3 8B Instruct](https://huggingface.co/internlm/internlm3-8b-instruct)!
-- **\[2024/07\]** Support [MiniCPM](xtuner/configs/minicpm/) models!
-- **\[2024/07\]** Support [DPO](https://github.com/InternLM/xtuner/tree/main/xtuner/configs/dpo), [ORPO](https://github.com/InternLM/xtuner/tree/main/xtuner/configs/orpo) and [Reward Model](https://github.com/InternLM/xtuner/tree/main/xtuner/configs/reward_model) training with packed data and sequence parallel! See [documents](https://xtuner.readthedocs.io/en/latest/dpo/overview.html) for more details.
-- **\[2024/07\]** Support [InternLM 2.5](xtuner/configs/internlm/internlm2_5_chat_7b/) models!
-- **\[2024/06\]** Support [DeepSeek V2](xtuner/configs/deepseek/deepseek_v2_chat/) models! **2x faster!**
-- **\[2024/04\]** [LLaVA-Phi-3-mini](https://huggingface.co/xtuner/llava-phi-3-mini-hf) is released! Click [here](xtuner/configs/llava/phi3_mini_4k_instruct_clip_vit_large_p14_336) for details!
-- **\[2024/04\]** [LLaVA-Llama-3-8B](https://huggingface.co/xtuner/llava-llama-3-8b) and [LLaVA-Llama-3-8B-v1.1](https://huggingface.co/xtuner/llava-llama-3-8b-v1_1) are released! Click [here](xtuner/configs/llava/llama3_8b_instruct_clip_vit_large_p14_336) for details!
-- **\[2024/04\]** Support [Llama 3](xtuner/configs/llama) models!
-- **\[2024/04\]** Support Sequence Parallel for enabling highly efficient and scalable LLM training with extremely long sequence lengths! \[[Usage](https://github.com/InternLM/xtuner/blob/docs/docs/zh_cn/acceleration/train_extreme_long_sequence.rst)\] \[[Speed Benchmark](https://github.com/InternLM/xtuner/blob/docs/docs/zh_cn/acceleration/benchmark.rst)\]
-- **\[2024/02\]** Support [Gemma](xtuner/configs/gemma) models!
-- **\[2024/02\]** Support [Qwen1.5](xtuner/configs/qwen/qwen1_5) models!
-- **\[2024/01\]** Support [InternLM2](xtuner/configs/internlm) models! The latest VLM [LLaVA-Internlm2-7B](https://huggingface.co/xtuner/llava-internlm2-7b) / [20B](https://huggingface.co/xtuner/llava-internlm2-20b) models are released, with impressive performance!
-- **\[2024/01\]** Support [DeepSeek-MoE](https://huggingface.co/deepseek-ai/deepseek-moe-16b-chat) models! 20GB GPU memory is enough for QLoRA fine-tuning, and 4x80GB for full-parameter fine-tuning. Click [here](xtuner/configs/deepseek/) for details!
-- **\[2023/12\]** 🔥 Support multi-modal VLM pretraining and fine-tuning with [LLaVA-v1.5](https://github.com/haotian-liu/LLaVA) architecture! Click [here](xtuner/configs/llava/README.md) for details!
-- **\[2023/12\]** 🔥 Support [Mixtral 8x7B](https://huggingface.co/mistralai/Mixtral-8x7B-Instruct-v0.1) models! Click [here](xtuner/configs/mixtral/README.md) for details!
-- **\[2023/11\]** Support [ChatGLM3-6B](xtuner/configs/chatglm) model!
-- **\[2023/10\]** Support [MSAgent-Bench](https://modelscope.cn/datasets/damo/MSAgent-Bench) dataset, and the fine-tuned LLMs can be applied by [Lagent](https://github.com/InternLM/lagent)!
-- **\[2023/10\]** Optimize the data processing to accommodate `system` context. More information can be found on [Docs](docs/en/user_guides/dataset_format.md)!
-- **\[2023/09\]** Support [InternLM-20B](xtuner/configs/internlm) models!
-- **\[2023/09\]** Support [Baichuan2](xtuner/configs/baichuan) models!
-- **\[2023/08\]** XTuner is released, with multiple fine-tuned adapters on [Hugging Face](https://huggingface.co/xtuner).
-
-## 📖 Introduction
-
-XTuner is an efficient, flexible and full-featured toolkit for fine-tuning large models.
-
-**Efficient**
-
-- Support LLM, VLM pre-training / fine-tuning on almost all GPUs. XTuner is capable of fine-tuning 7B LLM on a single 8GB GPU, as well as multi-node fine-tuning of models exceeding 70B.
-- Automatically dispatch high-performance operators such as FlashAttention and Triton kernels to increase training throughput.
-- Compatible with [DeepSpeed](https://github.com/microsoft/DeepSpeed) 🚀, easily utilizing a variety of ZeRO optimization techniques.
-
-**Flexible**
-
-- Support various LLMs ([InternLM](https://huggingface.co/internlm), [Mixtral-8x7B](https://huggingface.co/mistralai), [Llama 2](https://huggingface.co/meta-llama), [ChatGLM](https://huggingface.co/THUDM), [Qwen](https://huggingface.co/Qwen), [Baichuan](https://huggingface.co/baichuan-inc), ...).
-- Support VLM ([LLaVA](https://github.com/haotian-liu/LLaVA)). The performance of [LLaVA-InternLM2-20B](https://huggingface.co/xtuner/llava-internlm2-20b) is outstanding.
-- Well-designed data pipeline, accommodating datasets in any format, including but not limited to open-source and custom formats.
-- Support various training algorithms ([QLoRA](http://arxiv.org/abs/2305.14314), [LoRA](http://arxiv.org/abs/2106.09685), full-parameter fune-tune), allowing users to choose the most suitable solution for their requirements.
-
-**Full-featured**
-
-- Support continuous pre-training, instruction fine-tuning, and agent fine-tuning.
-- Support chatting with large models with pre-defined templates.
-- The output models can seamlessly integrate with deployment and server toolkit ([LMDeploy](https://github.com/InternLM/lmdeploy)), and large-scale evaluation toolkit ([OpenCompass](https://github.com/open-compass/opencompass), [VLMEvalKit](https://github.com/open-compass/VLMEvalKit)).
-
-## 🔥 Supports
-
-<table>
-<tbody>
-<tr align="center" valign="middle">
-<td>
-  <b>Models</b>
-</td>
-<td>
-  <b>SFT Datasets</b>
-</td>
-<td>
-  <b>Data Pipelines</b>
-</td>
- <td>
-  <b>Algorithms</b>
-</td>
-</tr>
-<tr valign="top">
-<td align="left" valign="top">
-<ul>
-  <li><a href="https://huggingface.co/internlm">InternLM2 / 2.5</a></li>
-  <li><a href="https://huggingface.co/meta-llama">Llama 2 / 3</a></li>
-  <li><a href="https://huggingface.co/collections/microsoft/phi-3-6626e15e9585a200d2d761e3">Phi-3</a></li>
-  <li><a href="https://huggingface.co/THUDM/chatglm2-6b">ChatGLM2</a></li>
-  <li><a href="https://huggingface.co/THUDM/chatglm3-6b">ChatGLM3</a></li>
-  <li><a href="https://huggingface.co/Qwen/Qwen-7B">Qwen</a></li>
-  <li><a href="https://huggingface.co/baichuan-inc/Baichuan2-7B-Base">Baichuan2</a></li>
-  <li><a href="https://huggingface.co/mistralai/Mixtral-8x7B-Instruct-v0.1">Mixtral</a></li>
-  <li><a href="https://huggingface.co/deepseek-ai/DeepSeek-V2-Chat">DeepSeek V2</a></li>
-  <li><a href="https://huggingface.co/google">Gemma</a></li>
-  <li><a href="https://huggingface.co/openbmb">MiniCPM</a></li>
-  <li>...</li>
-</ul>
-</td>
-<td>
-<ul>
-  <li><a href="https://modelscope.cn/datasets/damo/MSAgent-Bench">MSAgent-Bench</a></li>
-  <li><a href="https://huggingface.co/datasets/fnlp/moss-003-sft-data">MOSS-003-SFT</a> 🔧</li>
-  <li><a href="https://huggingface.co/datasets/tatsu-lab/alpaca">Alpaca en</a> / <a href="https://huggingface.co/datasets/silk-road/alpaca-data-gpt4-chinese">zh</a></li>
-  <li><a href="https://huggingface.co/datasets/WizardLM/WizardLM_evol_instruct_V2_196k">WizardLM</a></li>
-  <li><a href="https://huggingface.co/datasets/timdettmers/openassistant-guanaco">oasst1</a></li>
-  <li><a href="https://huggingface.co/datasets/garage-bAInd/Open-Platypus">Open-Platypus</a></li>
-  <li><a href="https://huggingface.co/datasets/HuggingFaceH4/CodeAlpaca_20K">Code Alpaca</a></li>
-  <li><a href="https://huggingface.co/datasets/burkelibbey/colors">Colorist</a> 🎨</li>
-  <li><a href="https://github.com/WangRongsheng/ChatGenTitle">Arxiv GenTitle</a></li>
-  <li><a href="https://github.com/LiuHC0428/LAW-GPT">Chinese Law</a></li>
-  <li><a href="https://huggingface.co/datasets/Open-Orca/OpenOrca">OpenOrca</a></li>
-  <li><a href="https://huggingface.co/datasets/shibing624/medical">Medical Dialogue</a></li>
-  <li>...</li>
-</ul>
-</td>
-<td>
-<ul>
-  <li><a href="docs/zh_cn/user_guides/incremental_pretraining.md">Incremental Pre-training</a> </li>
-  <li><a href="docs/zh_cn/user_guides/single_turn_conversation.md">Single-turn Conversation SFT</a> </li>
-  <li><a href="docs/zh_cn/user_guides/multi_turn_conversation.md">Multi-turn Conversation SFT</a> </li>
-</ul>
-</td>
-<td>
-<ul>
-  <li><a href="http://arxiv.org/abs/2305.14314">QLoRA</a></li>
-  <li><a href="http://arxiv.org/abs/2106.09685">LoRA</a></li>
-  <li>Full parameter fine-tune</li>
-  <li><a href="https://arxiv.org/abs/2305.18290">DPO</a></li>
-  <li><a href="https://arxiv.org/abs/2403.07691">ORPO</a></li>
-  <li>Reward Model</a></li>
-</ul>
-</td>
-</tr>
-</tbody>
-</table>
-
-## 🛠️ Quick Start
-
-### Installation
-
-- It is recommended to build a Python-3.10 virtual environment using conda
-
-  ```bash
-  conda create --name xtuner-env python=3.10 -y
-  conda activate xtuner-env
-  ```
-
-- Install XTuner via pip
-
-  ```shell
-  pip install -U xtuner
-  ```
-
-  or with DeepSpeed integration
-
-  ```shell
-  pip install -U 'xtuner[deepspeed]'
-  ```
-
-- Install XTuner from source
-
-  ```shell
-  git clone https://github.com/InternLM/xtuner.git
-  cd xtuner
-  pip install -e '.[all]'
-  ```
-
-### Fine-tune
-
-XTuner supports the efficient fine-tune (*e.g.*, QLoRA) for LLMs. Dataset prepare guides can be found on [dataset_prepare.md](./docs/en/user_guides/dataset_prepare.md).
-
-- **Step 0**, prepare the config. XTuner provides many ready-to-use configs and we can view all configs by
-
-  ```shell
-  xtuner list-cfg
-  ```
-
-  Or, if the provided configs cannot meet the requirements, please copy the provided config to the specified directory and make specific modifications by
-
-  ```shell
-  xtuner copy-cfg ${CONFIG_NAME} ${SAVE_PATH}
-  vi ${SAVE_PATH}/${CONFIG_NAME}_copy.py
-  ```
-
-- **Step 1**, start fine-tuning.
-
-  ```shell
-  xtuner train ${CONFIG_NAME_OR_PATH}
-  ```
-
-  For example, we can start the QLoRA fine-tuning of InternLM2.5-Chat-7B with oasst1 dataset by
-
-  ```shell
-  # On a single GPU
-  xtuner train internlm2_5_chat_7b_qlora_oasst1_e3 --deepspeed deepspeed_zero2
-  # On multiple GPUs
-  (DIST) NPROC_PER_NODE=${GPU_NUM} xtuner train internlm2_5_chat_7b_qlora_oasst1_e3 --deepspeed deepspeed_zero2
-  (SLURM) srun ${SRUN_ARGS} xtuner train internlm2_5_chat_7b_qlora_oasst1_e3 --launcher slurm --deepspeed deepspeed_zero2
-  ```
-
-  - `--deepspeed` means using [DeepSpeed](https://github.com/microsoft/DeepSpeed) 🚀 to optimize the training. XTuner comes with several integrated strategies including ZeRO-1, ZeRO-2, and ZeRO-3. If you wish to disable this feature, simply remove this argument.
-
-  - For more examples, please see [finetune.md](./docs/en/user_guides/finetune.md).
-
-- **Step 2**, convert the saved PTH model (if using DeepSpeed, it will be a directory) to Hugging Face model, by
-
-  ```shell
-  xtuner convert pth_to_hf ${CONFIG_NAME_OR_PATH} ${PTH} ${SAVE_PATH}
-  ```
-
-### Chat
-
-XTuner provides tools to chat with pretrained / fine-tuned LLMs.
-
-```shell
-xtuner chat ${NAME_OR_PATH_TO_LLM} --adapter {NAME_OR_PATH_TO_ADAPTER} [optional arguments]
+```
+myproject/
+├── core/                 # 核心应用
+│   ├── models.py        # 网站设置、通知、日志等模型
+│   ├── views.py         # 首页、搜索、通知等视图
+│   └── admin.py         # 管理界面配置
+├── users/               # 用户管理应用
+│   ├── models.py        # 用户模型扩展
+│   ├── admin.py         # 用户管理界面
+├── products/            # 产品管理应用
+│   ├── models.py        # 产品、分类、品牌等模型
+│   ├── views.py         # 产品列表、详情等视图
+│   └── admin.py         # 产品管理界面
+├── orders/              # 订单管理应用
+│   ├── models.py        # 订单、支付、物流等模型
+│   ├── admin.py         # 订单管理界面
+├── templates/           # 模板文件
+│   ├── base.html        # 基础模板
+│   └── core/            # 核心模板
+├── static/              # 静态文件
+│   ├── css/            # 样式文件
+│   ├── js/             # JavaScript文件
+│   └── images/         # 图片文件
+└── media/              # 上传文件目录
 ```
 
-For example, we can start the chat with InternLM2.5-Chat-7B :
+## 安装与运行
 
-```shell
-xtuner chat internlm/internlm2_5-chat-7b --prompt-template internlm2_chat
+### 1. 环境要求
+- Python 3.8+
+- PostgreSQL 12+
+
+### 2. 安装依赖
+```bash
+pip install -r requirements.txt
 ```
 
-For more examples, please see [chat.md](./docs/en/user_guides/chat.md).
+### 3. 数据库配置
+在 `myproject/settings.py` 中配置PostgreSQL数据库连接：
 
-### Deployment
-
-- **Step 0**, merge the Hugging Face adapter to pretrained LLM, by
-
-  ```shell
-  xtuner convert merge \
-      ${NAME_OR_PATH_TO_LLM} \
-      ${NAME_OR_PATH_TO_ADAPTER} \
-      ${SAVE_PATH} \
-      --max-shard-size 2GB
-  ```
-
-- **Step 1**, deploy fine-tuned LLM with any other framework, such as [LMDeploy](https://github.com/InternLM/lmdeploy) 🚀.
-
-  ```shell
-  pip install lmdeploy
-  python -m lmdeploy.pytorch.chat ${NAME_OR_PATH_TO_LLM} \
-      --max_new_tokens 256 \
-      --temperture 0.8 \
-      --top_p 0.95 \
-      --seed 0
-  ```
-
-  🔥 Seeking efficient inference with less GPU memory? Try 4-bit quantization from [LMDeploy](https://github.com/InternLM/lmdeploy)! For more details, see [here](https://github.com/InternLM/lmdeploy/tree/main#quantization).
-
-### Evaluation
-
-- We recommend using [OpenCompass](https://github.com/InternLM/opencompass), a comprehensive and systematic LLM evaluation library, which currently supports 50+ datasets with about 300,000 questions.
-
-## 🤝 Contributing
-
-We appreciate all contributions to XTuner. Please refer to [CONTRIBUTING.md](.github/CONTRIBUTING.md) for the contributing guideline.
-
-## 🎖️ Acknowledgement
-
-- [Llama 2](https://github.com/facebookresearch/llama)
-- [DeepSpeed](https://github.com/microsoft/DeepSpeed)
-- [QLoRA](https://github.com/artidoro/qlora)
-- [LMDeploy](https://github.com/InternLM/lmdeploy)
-- [LLaVA](https://github.com/haotian-liu/LLaVA)
-
-## 🖊️ Citation
-
-```bibtex
-@misc{2023xtuner,
-    title={XTuner: A Toolkit for Efficiently Fine-tuning LLM},
-    author={XTuner Contributors},
-    howpublished = {\url{https://github.com/InternLM/xtuner}},
-    year={2023}
+```python
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'myproject_db',
+        'USER': 'postgres',
+        'PASSWORD': 'your_password',
+        'HOST': 'localhost',
+        'PORT': '5432',
+    }
 }
 ```
 
-## License
+### 4. 数据库迁移
+```bash
+python manage.py makemigrations
+python manage.py migrate
+```
 
-This project is released under the [Apache License 2.0](LICENSE). Please also adhere to the Licenses of models and datasets being used.
+### 5. 创建超级用户
+```bash
+python manage.py createsuperuser
+```
+
+### 6. 运行开发服务器
+```bash
+python manage.py runserver
+```
+
+访问 `http://127.0.0.1:8000` 查看网站，访问 `http://127.0.0.1:8000/admin` 进入管理后台。
+
+## 使用说明
+
+### 管理后台操作
+
+1. **网站设置**: 在管理后台的"网站设置"中配置网站基本信息
+2. **分类管理**: 创建产品分类，支持多级分类
+3. **品牌管理**: 添加品牌信息和LOGO
+4. **产品管理**: 添加产品，设置价格、库存、图片等
+5. **轮播图**: 配置首页轮播图
+6. **FAQ**: 添加常见问题
+
+### 前台功能
+
+1. **浏览产品**: 按分类、品牌筛选产品
+2. **搜索功能**: 搜索产品名称或描述
+3. **用户注册**: 注册账号并完善个人信息
+4. **购物车**: 添加产品到购物车
+5. **订单管理**: 查看订单状态和历史
+
+## 开发说明
+
+### 自定义用户模型
+系统使用扩展的用户模型 `users.User`，包含额外的用户信息字段。
+
+### 模型关系
+- 产品与分类：多对一关系
+- 产品与品牌：多对一关系  
+- 订单与用户：多对一关系
+- 订单与产品：多对多关系（通过OrderItem）
+
+### 管理界面
+所有模型都配置了完善的Django管理界面，支持：
+- 列表显示和筛选
+- 搜索功能
+- 批量操作
+- 内联编辑
+
+## 许可证
+
+MIT License
+
+## 贡献
+
+欢迎提交Issue和Pull Request来改进这个项目。
+
+## 联系方式
+
+如有问题，请通过GitHub Issue联系我们。

@@ -1,3 +1,6 @@
--r requirements/runtime.txt
--r requirements/deepspeed.txt
--r requirements/modelscope.txt
+Django==5.2.5
+psycopg2-binary==2.9.10
+Pillow==11.3.0
+python-decouple==3.8
+whitenoise==6.7.0
+gunicorn==22.0.0
